@@ -1,0 +1,11 @@
+@()
+
+@template() {
+	<h2>Users</h2>
+
+	<ul>
+		<li data-ng-repeat="u in users">
+			<a data-ng-href="/users/{{u.id}}">User#{{u.id}}: {{u.name}}</a>
+		</li>
+	</ul>
+}
