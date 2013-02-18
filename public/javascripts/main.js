@@ -1,9 +1,8 @@
 var app = angular.module("app", ["ngResource"])
   .constant("apiUrl", "http://localhost:9000\:9000/api")
-	.config([
-    "$routeProvider", function($routeProvider) {
+	.config(["$routeProvider", function($routeProvider) {
       // WARNING!
-      // Never use a route starting with "/views/" or "/api/"
+      // Never use a route starting with "/views/" or "/api/" or "/assets/"
       // For templateUrl, always start with "/views/"
       return $routeProvider.when("/", {
         templateUrl: "/views/index",
@@ -49,7 +48,6 @@ app.controller("AppCtrl", ["$scope", function($scope) {
 app.controller("ColorCtrl", ["$scope", "$routeParams", function($scope, $routeParams) {
   // Thanks to scope inheritance, we can access the "db" from the AppCtrl scope
   $scope.color = $scope.db[$routeParams.id];
-  console.log($scope.color);
   if (!$scope.color) {
     $scope.msg = "There is no color for id "+$routeParams.id;
   } else {

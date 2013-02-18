@@ -15,6 +15,6 @@ object Users extends Controller {
 	}
 
 	def find(id: String) = Action {
-		Ok(db.value.filter(value => (value \ "id").as[JsString].value == id).headOption.getOrElse(new JsUndefined("")))
+		Ok(db.value.filter(v => (v \ "id").as[JsString].value == id).headOption.getOrElse(new JsUndefined("")))
 	}
 }
