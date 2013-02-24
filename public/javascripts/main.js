@@ -20,6 +20,16 @@ var app = angular.module("app", ["ngResource"])
       }).when("/users/:id", {
         templateUrl: "/views/user",
         controller: "UserCtrl"
+      }).when("/routing/public1", {
+        templateUrl: "/views/public/public1"
+      }).when("/routing/public2", {
+        templateUrl: "/views/public/public2"
+      }).when("/routing/authenticated", {
+        templateUrl: "/views/authenticated/authenticated"
+      }).when("/routing/admin1", {
+        templateUrl: "/views/admin/admin1"
+      }).when("/routing/admin2", {
+        templateUrl: "/views/admin/admin2"
       }).otherwise({
         redirectTo: "/"
       });

@@ -59,3 +59,18 @@ a:hover {
 .nav ul li a:hover {
 	color: #92d13d;
 }
+
+.nav ul li.submenu ul {
+	display: none;
+	position: absolute;
+}
+
+.nav ul li.submenu:hover ul {
+	display: block;
+}
+
+.nav ul li.submenu ul li {
+	float: none;
+	background-color: #333;
+	padding: 10px;
+}
